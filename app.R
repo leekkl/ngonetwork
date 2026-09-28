@@ -28,10 +28,7 @@ rsconnect::writeManifest()
 
 full_ngo_wish_collab_revised <- read_excel("full_ngo_wish_collab.xlsx")
 Survey_data_paper1_cleaned <- read_excel("Survey_data_paper1_cleaned.xlsx")
-```
 
-
-```{r}
 full_ngo_wish_collab_revised1 <- full_ngo_wish_collab_revised %>% pivot_longer(-ngoid, names_to = "partners") %>% filter(!is.na(value)) %>%
   filter(partners != "ASEAN" & partners != "International" & partners != "European Union" & partners != "Latin America" & partners != "Regional" & partners != "Asia/Pacific"
          & partners != "Caribbean" & partners != "Africa" & partners != "Asia" & partners != "Europe" & partners != "Pacific") 
@@ -41,10 +38,7 @@ full_ngo_wish_collab_revised2 <- full_ngo_wish_collab_revised1 %>% pivot_wider(n
 full_ngo_wish_collab_revised3 <- full_ngo_wish_collab_revised %>% select(ngoid) %>% left_join(full_ngo_wish_collab_revised2, by = "ngoid")
 
 full_ngo_wish_collab_revised3[is.na(full_ngo_wish_collab_revised3)] <- 0
-```
 
-
-```{r}
 full_ngo_wish_collab_revised_mat <- as.data.frame(full_ngo_wish_collab_revised3)
 rownames(full_ngo_wish_collab_revised_mat) <- full_ngo_wish_collab_revised3$ngoid
 full_ngo_wish_collab_revised_mat1 <- as.matrix(full_ngo_wish_collab_revised_mat[,-1])
@@ -64,20 +58,19 @@ full_ngo_wish_collab_revised_country_mat2 <- graph_from_adjacency_matrix(full_ng
 
 edges_full_ngo_wish_collab_revised_country <- data.frame(as_edgelist(full_ngo_wish_collab_revised_country_mat2))
 colnames(edges_full_ngo_wish_collab_revised_country)<-c("from","to")
-```
+
 
 #Nodes that are not connected are those NGOs said they wanted to collaborate but within only one country
-```{r}
+
 nodes_full_ngo_wish_collab_revised_country <- data.frame(id = as.character(V(full_ngo_wish_collab_revised_country_mat2)))
 nodes_full_ngo_wish_collab_revised_country$font.size<-20
 nodes_full_ngo_wish_collab_revised_country$id <- as.character(rownames(full_ngo_wish_collab_revised_country_mat1))
 
 edges_full_ngo_wish_collab_revised_country <- data.frame(as_edgelist(full_ngo_wish_collab_revised_country_mat2))
 colnames(edges_full_ngo_wish_collab_revised_country)<-c("from","to")
-```
+
 
 #World data
-```{r}
 world <- ne_countries(scale = "medium", returnclass = "sf")
 world1 <- world %>% select(geounit, su_a3, geometry)
 
@@ -121,10 +114,9 @@ world_joined_r1.3 <- world_joined_r1.2 %>% filter(region_cole_geist != "Global")
 world_joined_r1.2.1 <- world_joined_r1.2 %>% group_by(region_cole_geist, Social_equality, Democratic_participation) %>% count(admin) %>%
   mutate(admin = recode(admin, 
                         "United States of America" = "United States"))
-```
+
 
 #Network
-```{r}
 nodes_full_ngo_wish_collab_revised_country1 <- left_join(nodes_full_ngo_wish_collab_revised_country, world_joined_r1.2.1, 
                                                          by = c("id" = "admin")) %>% select(id, font.size, region_cole_geist,
                                                                                             Social_equality,
@@ -138,10 +130,7 @@ nodes_full_ngo_wish_collab_revised_country1 <- left_join(nodes_full_ngo_wish_col
   distinct()
 
 nodes_full_ngo_wish_collab_revised_country2 <- nodes_full_ngo_wish_collab_revised_country1 %>% select(-font.size) %>% mutate(font.size = 30)
-```
 
-
-```{r}
 ui <- fluidPage(
   titlePanel("Exploring desired national partnerships and indices"),
   fluidRow(

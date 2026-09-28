@@ -4413,26 +4413,8 @@
     }
   },
   "files": {
-    ".gitattributes": {
-      "checksum": "05bdb783ee6514c8c072e47680af8ff7"
-    },
     "app.R": {
-      "checksum": "20718b0cb90e4d47eba83ac0e8007a0b"
-    },
-    "full_ngo_wish_collab.xlsx": {
-      "checksum": "fdcc415144352e336e879cf4626919ec"
-    },
-    "ngo_wish_collab.Rmd": {
-      "checksum": "685c35ab1e2b59a9d50709d5e73014c6"
-    },
-    "ngonetwork.git/app.R": {
-      "checksum": "5ca37c17b10ef232812ec7a99cf7309d"
-    },
-    "ngonetworkcollab/app.R": {
-      "checksum": "20718b0cb90e4d47eba83ac0e8007a0b"
-    },
-    "Survey_data_paper1_cleaned.xlsx": {
-      "checksum": "d1332a2c82c8eb04934f37a2a7cbcc29"
+      "checksum": "0edbb65b40fe3b4ff1044287e25e2ad5"
     }
   },
   "users": null
