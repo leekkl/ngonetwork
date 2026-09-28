@@ -198,7 +198,7 @@ server <- function(input, output, session) {
     current_sel <- selected_node()
     
     p <- ggplot(nodes_full_ngo_wish_collab_revised_country2, aes(x = Social_equality, y = Democratic_participation, color = group, data_id = id, tooltip = id)) +
-      geom_text_repel_interactive(aes(label = id, color = group)) +
+      geom_text_repel_interactive(aes(label = id, color = group, family = "serif")) +
       theme_minimal() +
       theme(legend.position = "none",
             axis.text.x = element_text(size = 6, color = "grey40"), # Small x-axis labels
