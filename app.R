@@ -23,6 +23,7 @@ library(GGally)
 library(network)
 library(sna)
 library(rsconnect)
+library(ggrepel)
 
 rsconnect::writeManifest()
 
