@@ -23,7 +23,6 @@ library(GGally)
 library(network)
 library(sna)
 library(rsconnect)
-install.packages(ggrepel)
 library(ggrepel)
 
 rsconnect::writeManifest()
