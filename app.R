@@ -133,11 +133,11 @@ nodes_full_ngo_wish_collab_revised_country1 <- left_join(nodes_full_ngo_wish_col
 nodes_full_ngo_wish_collab_revised_country2 <- nodes_full_ngo_wish_collab_revised_country1 %>% select(-font.size) %>% mutate(font.size = 30)
 
 ui <- fluidPage(
-  titlePanel("Exploring desired national partnerships and indices"),
+  titlePanel("Exploring desired inter/intranational partnerships and national indices"),
   fluidRow(
     column(6, 
-           h3("Network of desired partnerships among countries"),
-           visNetworkOutput("network_plot", height = "400px")
+           h3("Network of desired partnerships among/within countries"),
+           visNetworkOutput("network_plot", height = "450px")
     ),
     column(6, 
            h3("Scatterplot of social equality and democratic participation indices"),
