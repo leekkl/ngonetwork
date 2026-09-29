@@ -24,6 +24,7 @@ library(network)
 library(sna)
 library(rsconnect)
 
+
 rsconnect::writeManifest()
 
 full_ngo_wish_collab_revised <- read_excel("full_ngo_wish_collab.xlsx")
