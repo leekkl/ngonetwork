@@ -23,7 +23,6 @@ library(GGally)
 library(network)
 library(sna)
 library(rsconnect)
-library(ggrepel)
 
 rsconnect::writeManifest()
 
@@ -205,8 +204,8 @@ server <- function(input, output, session) {
       geom_text_repel_interactive(aes(label = id, color = group, family = "serif")) +
       theme_minimal() +
       theme(legend.position = "none",
-            axis.text.x = element_text(size = 6, color = "grey40"), # Small x-axis labels
-            axis.text.y = element_text(size = 6, color = "grey40"),
+            axis.text.x = element_text(size = 8, color = "grey40"), # Small x-axis labels
+            axis.text.y = element_text(size = 8, color = "grey40"),
             axis.title.x = element_text(size = 12),
             axis.title.y = element_text(size = 12)) +
       labs(x = "Social equality index", y = "Democratic participation index")
@@ -219,7 +218,8 @@ server <- function(input, output, session) {
           css = "stroke:red;stroke-width:3px;fill-opacity:0.9;",
           selected = as.character(current_sel) # Sets interactive state programmatically
         ),
-        opts_hover(css = "fill-opacity:0.7;cursor:pointer;")
+        opts_hover(css = "fill-opacity:0.7;cursor:pointer;"),
+        opts_tooltip(css = "color: white; background-color:gray; padding: 5px;")
       )
     )
   })
