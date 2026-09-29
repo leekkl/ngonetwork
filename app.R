@@ -24,6 +24,8 @@ library(network)
 library(sna)
 library(rsconnect)
 
+rsconnect::writeManifest()
+
 full_ngo_wish_collab_revised <- read_excel("full_ngo_wish_collab.xlsx")
 Survey_data_paper1_cleaned <- read_excel("Survey_data_paper1_cleaned.xlsx")
 
@@ -224,5 +226,3 @@ server <- function(input, output, session) {
 }
 
 shinyApp(ui, server)
-
-rsconnect::writeManifest()
