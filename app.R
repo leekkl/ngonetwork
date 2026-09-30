@@ -142,7 +142,8 @@ ui <- fluidPage(
     column(6, 
            h3("Scatterplot of social equality and democratic participation indices"),
            girafeOutput("girafe_plot", height = "400px")
-    )
+    ),
+    h4(p("PI: Hyungoo Lee", style = "font-size: 10px;"))
   )
 )
 

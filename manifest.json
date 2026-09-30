@@ -269,7 +269,12 @@
         "Repository": "CRAN",
         "Date/Publication": "2026-01-10 09:50:02 UTC",
         "Built": "R 4.4.3; aarch64-apple-darwin20; 2026-01-10 11:30:19 UTC; unix",
-        "Archs": "Rcpp.so.dSYM"
+        "Archs": "Rcpp.so.dSYM",
+        "RemoteType": "standard",
+        "RemotePkgRef": "Rcpp",
+        "RemoteRef": "Rcpp",
+        "RemoteRepos": "https://cran.rstudio.com",
+        "RemoteSha.Version": "1.1.1"
       }
     },
     "RcppTOML": {
@@ -4445,8 +4450,11 @@
     ".gitattributes": {
       "checksum": "05bdb783ee6514c8c072e47680af8ff7"
     },
+    ".RData": {
+      "checksum": "610c7a4037cb015545a76bd9a1ccc770"
+    },
     "app.R": {
-      "checksum": "6fb1599888dddb0eb8764fc34d30c962"
+      "checksum": "f48e8078c3e71e58460f5e4aa3533cdf"
     },
     "full_ngo_wish_collab.xlsx": {
       "checksum": "fdcc415144352e336e879cf4626919ec"
