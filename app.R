@@ -144,10 +144,9 @@ ui <- fluidPage(
            girafeOutput("girafe_plot", height = "400px")
     ),
     h5(
-      a(p("Source of adapted regional typology", 
+      a("Source of adapted regional typology", 
           href = "https://journals.sagepub.com/doi/10.1177/23780231231178426", 
-          target = "_blank")
-      ),
+          target = "_blank"),
       p("PI: Hyungoo Lee", style = "font-size: 11px;"))
   )
 )
