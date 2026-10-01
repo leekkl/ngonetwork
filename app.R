@@ -143,7 +143,12 @@ ui <- fluidPage(
            h3("Scatterplot of social equality and democratic participation indices"),
            girafeOutput("girafe_plot", height = "400px")
     ),
-    h4(p("PI: Hyungoo Lee", style = "font-size: 10px;"))
+    h5(
+      a(p("Source of adapted regional typology", 
+          href = "https://journals.sagepub.com/doi/10.1177/23780231231178426", 
+          target = "_blank")
+      ),
+      p("PI: Hyungoo Lee", style = "font-size: 11px;"))
   )
 )
 
